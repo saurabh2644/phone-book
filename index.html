@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Book</title>
+
+    <style>
+
+        h1{
+            font-size: 50px;
+            color: rgb(124, 209, 124);
+        }
+
+        input{
+            height: 30px;
+            width: 260px;
+            border-radius: 7px;
+            padding: 7px;
+            border: 1px solid;
+        }
+
+        button{
+            color: rgb(250, 252, 250);
+            background-color: rgb(124, 209, 124);
+            height: 45px;
+            width: 80px;
+            border-radius: 10px;
+            border: none;
+            margin-left: 30px;
+        }
+
+        p{
+            height:  40px;
+            width: 400px;
+           display: block;
+           margin: 20px auto;
+           padding: 5px;
+            color: rgb(124, 209, 124);
+            font-size: 25px;
+            border: 1px solid;
+        }
+
+        .conatiner{
+          
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="conatiner">
+        <h1>Phone book</h1>
+
+        <input type="text" id="search" placeholder="Search Contact">
+        <button type="button" onclick="search()">Search</button>
+        <p id="result"></p>
+
+    </div>
+
+    <script>
+        const contact = {
+
+            saurabh: "8956804576",
+            abhi: "9373941126",
+            rushi: "8765453212",
+            shubham: "8767520820"
+
+        }
+
+        function search() {
+            const searchInput = document.getElementById("search");
+            const query = searchInput.value.toLowerCase();
+
+            const phone = contact[query]
+
+            const result = document.getElementById("result")
+
+            if (phone) {
+                result.innerText = `  ${query}'s Contact No: ${phone}`;
+
+            }
+
+            else {
+                result.innerText = `Contact not Found`
+            }
+        }
+    </script>
+</body>
+
+</html>
